@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ name }}</title>
+</head>
+<body>
+<div id="app">
+   <h3>Счетчик = {{ counter }}</h3>
+    <hr>
+    <button v-on:click="riseCount">Click</button>
+   <h3 v-on:mouseover="onHover">Счетчик 2 = {{ counter2 }}</h3>
+    <button v-on:click="counter2++">Click</button>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+<script>
+    new Vue ({
+        el: '#app',
+        data: {
+            counter: 0,
+            counter2: 0
+        },
+        methods: {
+            riseCount: function () {
+                this.counter++
+            },
+            onHover: function (e) {
+                e.target.style.color = 'red'
+            }
+        }
+    })
+
+</script>
+
+
+</body>
+</html>

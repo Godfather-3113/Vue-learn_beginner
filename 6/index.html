@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ name }}</title>
+</head>
+<body>
+<div id="app">
+   <h3><a href="https://www.google.ru" target="_blank" v-on:click.prevent>Google</a></h3>
+   <h3  v-on:mousemove="handleMouseMove">
+       X: {{X}} /  Y: {{Y}}
+
+       <span  v-on:mousemove.stop="">Stop</span>
+   </h3>
+    <hr>
+    <input type="text" v-on:keyup.enter="alertValue">
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+<script>
+    new Vue ({
+        el: '#app',
+        data: {
+            X: 0,
+            Y: 0,
+        },
+        methods: {
+            handleMouseMove: function (event){
+                this.X = event.clientX;
+                this.Y = event.clientY;
+
+            },
+            alertValue: function (event) {
+                alert(event.target.value)
+            }
+        }
+    })
+
+</script>
+
+
+</body>
+</html>

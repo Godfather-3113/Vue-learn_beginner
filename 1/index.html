@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ name }}</title>
+</head>
+<body>
+<div id="app">
+  <input type="text" v-on:input="changeName">
+  <h1>Hello {{ name }}</h1>
+  <h1>Num: {{ 100 + 20 }}</h1>
+  <h1>Sum: {{ sum }}</h1>
+  <h1>Method: {{ sums() }}</h1>
+  <h1>If statment: {{ isOk ? 'My name is John' : 'Havent name ' + name }}</h1>
+  <h1>Function: {{ name.split('').reverse('').join('+')  }}</h1>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+<script>
+    new Vue ({
+        el: '#app',
+        data: {
+            name: 'Vue!',
+            sum: 100,
+            isOk: false
+        },
+        methods: {
+            changeName : function (event) {
+                this.name = event.target.value
+            },
+            sums: function () {
+                return 120+65
+            }
+
+        }
+    })
+
+</script>
+
+
+</body>
+</html>
