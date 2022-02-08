@@ -7,8 +7,19 @@
 <body>
     <div id="app">
         <ul>
-            <li v-for="person in people">{{ person }}</li>
+            <li v-for="(person, index) in people">{{index + 1 }}.) {{ person.name }} - <b>{{ person.age }}</b></li>
         </ul>
+
+        <hr>
+
+        <ol>
+            <li v-for="num in 10"> {{ num }}</li>
+        </ol>
+        <hr>
+
+        <ol>
+            <li v-for="(value, key) in person">{{ key }} : {{ value }}</li>
+        </ol>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
@@ -17,10 +28,24 @@
             el: '#app',
             data: {
                people: [
-                   'Alex',
-                   'John',
-                   'Terry'
-               ]
+                   {
+                       name: 'Alex',
+                       age: 21
+                   },
+                   {
+                       name: 'John',
+                       age: 24
+                   },
+                   {
+                       name: 'Terry',
+                       age: 23
+                   }
+               ],
+                person : {
+                   name : 'John',
+                   age : '26',
+                   job : 'Seller',
+                }
             },
         })
     </script>
