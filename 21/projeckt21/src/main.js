@@ -3,10 +3,12 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import Car from './components/Car'
 
+Vue.component('v-car', Car)
 Vue.config.productionTip = false
 
-/* eslint-disable no-new */
+// eslint-disable-next-line no-new
 new Vue({
   el: '#app',
   router,

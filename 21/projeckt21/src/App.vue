@@ -1,12 +1,28 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <router-view/>
+    <h1>Parent: {{ carName }}</h1>
+    <v-car
+      v-bind:carName="carName"
+      v-bind:carYear="carYear"
+    ></v-car>
   </div>
+
 </template>
 
 <script>
+import Car from './components/Car'
+
 export default {
+  data () {
+    return {
+      carName: 'Ford from parent',
+      carYear: '2021 from parent'
+    }
+  },
+  components: {
+    appCar: Car
+  },
   name: 'App'
 }
 </script>
