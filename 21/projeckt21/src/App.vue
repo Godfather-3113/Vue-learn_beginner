@@ -16,8 +16,8 @@ import Car from './components/Car'
 export default {
   data () {
     return {
-      carName: 'Ford from parent',
-      carYear: '2021 from parent'
+      carName: 'Ford',
+      carYear: 2021
     }
   },
   components: {
