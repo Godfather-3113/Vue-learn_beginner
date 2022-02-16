@@ -5,6 +5,7 @@
     <v-car
       v-bind:carName="carName"
       v-bind:carYear="carYear"
+      @nameChanged="carName = $event"
     ></v-car>
   </div>
 

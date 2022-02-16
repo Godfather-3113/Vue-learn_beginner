@@ -2,6 +2,7 @@
   <div class="car">
     <h2>Name: {{ carName}} \ {{ reverseName }}</h2>
     <p>Year: {{ carYear }}</p>
+    <button @click="changeName">Change name</button>
   </div>
 </template>
 
@@ -19,6 +20,12 @@ export default {
       // default: 'Defautl name'
     },
     carYear: Number
+  },
+  methods: {
+    changeName () {
+      this.carName = 'Mazda'
+      this.$emit('nameChanged', this.carName)
+    }
   },
   computed: {
     reverseName () {
